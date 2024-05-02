@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import './App.css';
+import Profile from './components/Profile.jsx';
+
+import { getImageUrl } from './utils.js';
+
+export default function Gallery() {
+
+  let allProfiles = [
+    {
+      name: "Maria Skłodowska-Curie",
+      image: getImageUrl('szV5sdG'),
+      proffession: "physicist and chemist",
+      awards: [
+        'Nobel Prize in Physics',
+        'Nobel Prize in Chemistry',
+        'Davy Medal',
+        'Matteucci Medal'
+      ],
+      discovered: "a method for measuring carbon dioxide in seawater"
+    },
+    {
+      name: "Katsuko Saruhashi",
+      image: getImageUrl('YfeOqp2'),
+      proffession: "geochemist",
+      awards: ['Miyake Prize for geochemistry',' Tanaka Prize'],
+      discovered: "a method for measuring carbon dioxide in seawater"
+    }
+  ]
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+     
+     <Profile profiles={allProfiles}/>
+      
     </div>
   );
 }
 
-export default App;
